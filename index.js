@@ -1,11 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config');
-const helloRoute = require('./routes/hello');
 
 const app = express();
 
-app.use(helloRoute);
+// app routes
 
 mongoose.connect(config.db).then(() => {
   console.log('mongodb connected');
