@@ -5,8 +5,13 @@ const User = require('../models/user');
 
 const authRouter = express.Router();
 
+authRouter.get('/api/status', (req, res) => {
+  res.send('Its Work Ja!');
+});
+
 authRouter.post('/api/signup', async (req, res) => {
   try {
+    console.log(req.body);
     const {fullName, email, password} = req.body;
 
     const existEmail = await User.findOne({email});
