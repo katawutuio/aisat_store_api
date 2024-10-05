@@ -8,7 +8,7 @@ subCategoryRouter.post('/api/subcategories', async (req, res) => {
     const subcategory = new SubCategory({categoryId, categoryName, image, subCategoryName});
     await subcategory.save();
     return res.status(201).send(subcategory);
-  } catch (error) {
+  } catch (e) {
     return res.status(500).json({error: e.message}) ;
   }
 });
