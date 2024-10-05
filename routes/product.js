@@ -29,7 +29,7 @@ productRouter.get('/api/popular-products', async (req, res) => {
   }
 });
 
-productRouter.get('/api/recommend-products', async (req, res) => {
+productRouter.get('/api/recommended-products', async (req, res) => {
   try {
     const product = await Product.find({recommend: true});
     if(!product || product.length == 0){ 
