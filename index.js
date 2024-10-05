@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const config = require('./config');
 
 const authRouter = require('./routes/auth');
+const bannerRouter = require('./routes/banner');
 
 const app = express();
 app.use(express.json());
 
 // app routes
 app.use(authRouter);
+app.use(bannerRouter);
 
 mongoose.connect(config.db).then(() => {
   console.log('mongodb connected');
