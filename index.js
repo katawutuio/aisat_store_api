@@ -6,6 +6,7 @@ const authRouter = require('./routes/auth');
 const bannerRouter = require('./routes/banner');
 const categoryRouter = require('./routes/category');
 const subCategoryRouter = require('./routes/sub_category');
+const productRouter = require('./routes/product');
 
 const app = express();
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use(authRouter);
 app.use(bannerRouter);
 app.use(categoryRouter);
 app.use(subCategoryRouter);
+app.use(productRouter);
 
 mongoose.connect(config.db).then(() => {
   console.log('mongodb connected');
