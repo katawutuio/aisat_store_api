@@ -9,9 +9,11 @@ const subCategoryRouter = require('./routes/sub_category');
 const productRouter = require('./routes/product');
 const productReviewRouter = require('./routes/product_review');
 
+const cors = require('cors');
+
 const app = express();
 app.use(express.json());
-
+app.use(cors()); // enable cors for all routes and origin
 // app routes
 app.use(authRouter);
 app.use(bannerRouter);
